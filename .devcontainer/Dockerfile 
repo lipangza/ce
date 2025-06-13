@@ -1,0 +1,12 @@
+# 安装 Python 开发库和必要工具
+RUN apt-get update && apt-get install -y \
+    python3-dev \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+# 重新编译 Python 以启用共享库（如果需要）
+# 注意：这部分仅在 Python 未正确安装时需要
+# RUN cd /path/to/python/source && \
+#     ./configure --enable-shared && \
+#     make -j4 && \
+#     make install
